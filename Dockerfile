@@ -12,7 +12,10 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN npm run build
+# Override to standalone for Docker (firebase uses "export")
+RUN sed -i 's/output: "export"/output: "standalone"/' next.config.ts && \
+    sed -i '/unoptimized/d; /images: {/d; /^  },/d' next.config.ts && \
+    npm run build
 
 # ---- Stage 3: Production runner ----
 FROM node:22-alpine AS runner
