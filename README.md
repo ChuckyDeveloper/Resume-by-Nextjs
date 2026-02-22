@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Personal Resume Website
 
-## Getting Started
+A modern, responsive personal portfolio & resume website built with **Next.js 16**, **React 19**, and **Tailwind CSS 4**. Features bilingual support (EN/TH), smooth scroll animations, and a sleek dark theme.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- 🎨 **Dark Navy Theme** — Elegant glassmorphism cards with gradient accents
+- 🌏 **Bilingual (EN / TH)** — Full Thai & English language toggle with context-based i18n
+- 🎭 **Scroll Animations** — Intersection Observer-based reveal effects
+- 📱 **Fully Responsive** — Mobile-first design with adaptive layouts
+- ⚡ **Blazing Fast** — Static generation with Next.js standalone output
+- 🐳 **Docker Ready** — Multi-stage Dockerfile for lightweight production image
+
+## 🛠️ Tech Stack
+
+| Layer      | Technology                         |
+| ---------- | ---------------------------------- |
+| Framework  | Next.js 16 (App Router, Turbopack) |
+| UI Library | React 19                           |
+| Styling    | Tailwind CSS 4                     |
+| Language   | TypeScript 5                       |
+| Icons      | Lucide React                       |
+| Deployment | Docker / Vercel / VPS              |
+
+## 📁 Project Structure
+
+```
+web-resume/
+├── app/
+│   ├── components/       # UI components (Navbar, Hero, About, etc.)
+│   ├── context/          # LanguageContext (EN/TH toggle)
+│   ├── data/
+│   │   ├── resume.ts     # All resume data + inline Thai translations
+│   │   └── i18n.ts       # UI text translations (en/th)
+│   ├── globals.css       # Theme, animations, custom styles
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/               # Static assets (images, logos)
+├── Dockerfile            # Multi-stage production build
+├── docker-compose.yml
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Node.js** ≥ 22
+- **npm** ≥ 10
 
-## Learn More
+### Development
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start dev server
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+### Production Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm run start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🐳 Docker
+
+```bash
+# Build & run with Docker Compose
+docker compose up -d
+
+# Or manually
+docker build -t web-resume .
+docker run -d -p 3000:3000 web-resume
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📝 Customization
+
+All personal data lives in **`app/data/resume.ts`** — edit this single file to update:
+
+- Personal info, experiences, projects, skills, education
+- Thai translations are **colocated** as a `th` property on each item
+
+UI labels & section text are in **`app/data/i18n.ts`**.
+
+## 📄 License
+
+This project is for personal use. Feel free to fork and adapt for your own portfolio.
