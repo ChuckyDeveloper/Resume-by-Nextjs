@@ -137,16 +137,19 @@ export const skills = {
   frontend: {
     label: "Frontend",
     items: [
-      { name: "React.js / Next.js" },
-      { name: "Nuxt 3 / Vue 3" },
-      { name: "TypeScript / JavaScript" },
-      { name: "Tailwind CSS" },
-      { name: "HTML / CSS" },
+      { name: "React.js / Next.js", level: 70 },
+      { name: "Nuxt 3 / Vue 3", level: 80 },
+      { name: "TypeScript / JavaScript", level: 85 },
+      { name: "Tailwind CSS", level: 90 },
+      { name: "HTML / CSS", level: 75 },
     ],
   },
   backend: {
     label: "Backend",
-    items: [{ name: "Node.js / Express" }, { name: "REST API Design" }],
+    items: [
+      { name: "Node.js / Express", level: 86 },
+      { name: "REST API Design", level: 84 },
+    ],
   },
   database: {
     label: "Database",

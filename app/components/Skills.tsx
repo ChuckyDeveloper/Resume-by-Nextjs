@@ -6,23 +6,6 @@ import ScrollReveal from "./ScrollReveal";
 import { useLanguage } from "../context/LanguageContext";
 import { uiText } from "../data/i18n";
 
-function ProficiencyDots({ level }: { level: number }) {
-  const totalDots = 5;
-  const filled = Math.round(level / 20);
-  return (
-    <div className="flex gap-1">
-      {Array.from({ length: totalDots }).map((_, i) => (
-        <span
-          key={i}
-          className={`inline-block h-1.5 w-1.5 rounded-full transition-colors ${
-            i < filled ? "bg-current opacity-90" : "bg-current opacity-15"
-          }`}
-        />
-      ))}
-    </div>
-  );
-}
-
 export default function Skills() {
   const { locale } = useLanguage();
   const text = uiText[locale].skills;
@@ -114,9 +97,7 @@ export default function Skills() {
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {text.heading}
             </h2>
-            <p className="mt-3 max-w-xl text-muted">
-              {text.description}
-            </p>
+            <p className="mt-3 max-w-xl text-muted">{text.description}</p>
           </div>
         </ScrollReveal>
 
@@ -124,6 +105,8 @@ export default function Skills() {
         <div className="grid gap-8 sm:grid-cols-2">
           {Object.values(skills).map((category, idx) => {
             const config = categoryConfig[category.label] || defaultConfig;
+            const useTubeLayout =
+              category.label === "Frontend" || category.label === "Backend";
             return (
               <ScrollReveal key={category.label} delay={idx * 120}>
                 <div className="group glass-card rounded-2xl p-6 h-full relative overflow-hidden">
@@ -141,8 +124,9 @@ export default function Skills() {
                     </div>
                     <div>
                       <h3 className="text-base font-bold text-foreground">
-                        {text.labels[category.label as keyof typeof text.labels] ||
-                          category.label}
+                        {text.labels[
+                          category.label as keyof typeof text.labels
+                        ] || category.label}
                       </h3>
                       <span className="text-xs text-muted">
                         {category.items.length} {text.skillsSuffix}
@@ -150,21 +134,59 @@ export default function Skills() {
                     </div>
                   </div>
 
-                  {/* Skill tags */}
-                  <div className="flex flex-wrap gap-2.5">
-                    {category.items.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className={`skill-tag group/tag inline-flex items-center gap-2 rounded-full border px-3.5 py-2 transition-all duration-200 cursor-default ${config.tagBg} ${config.tagBorder}`}
-                      >
-                        <span
-                          className={`text-sm font-medium ${config.tagText}`}
+                  {/* Skills */}
+                  {useTubeLayout ? (
+                    <div className="flex flex-col gap-2">
+                      {category.items.map((skill) => {
+                        const levelRaw =
+                          "level" in skill && typeof skill.level === "number"
+                            ? skill.level
+                            : 80;
+                        const level = Math.max(
+                          0,
+                          Math.min(100, Math.round(levelRaw)),
+                        );
+
+                        return (
+                          <div
+                            key={skill.name}
+                            className={`skill-tube inline-flex items-center justify-between gap-4 rounded-full border px-4 py-2.5 transition-all duration-200 cursor-default ${config.tagBg} ${config.tagBorder}`}
+                          >
+                            <span
+                              className={`text-sm font-medium ${config.tagText}`}
+                            >
+                              {skill.name}
+                            </span>
+                            <div
+                              aria-hidden="true"
+                              className={`${config.dotColor} relative h-2.5 w-28 shrink-0`}
+                            >
+                              <div className="absolute inset-0 rounded-full bg-current opacity-15" />
+                              <div
+                                className="absolute inset-y-0 left-0 rounded-full bg-current opacity-80"
+                                style={{ width: `${level}%` }}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-2.5">
+                      {category.items.map((skill) => (
+                        <div
+                          key={skill.name}
+                          className={`skill-tag group/tag inline-flex items-center gap-2 rounded-full border px-3.5 py-2 transition-all duration-200 cursor-default ${config.tagBg} ${config.tagBorder}`}
                         >
-                          {skill.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                          <span
+                            className={`text-sm font-medium ${config.tagText}`}
+                          >
+                            {skill.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </ScrollReveal>
             );
@@ -174,9 +196,7 @@ export default function Skills() {
         {/* Bottom summary */}
         <ScrollReveal delay={500}>
           <div className="mt-12 text-center">
-            <p className="text-sm text-muted">
-              {text.bottomNote} 🚀
-            </p>
+            <p className="text-sm text-muted">{text.bottomNote} 🚀</p>
           </div>
         </ScrollReveal>
       </div>
