@@ -137,7 +137,7 @@ export const skills = {
   frontend: {
     label: "Frontend",
     items: [
-      { name: "React.js / Next.js", level: 70 },
+      { name: "React.js / Next.js", level: 65 },
       { name: "Nuxt 3 / Vue 3", level: 80 },
       { name: "TypeScript / JavaScript", level: 80 },
       { name: "Tailwind CSS", level: 80 },
