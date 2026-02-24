@@ -5,6 +5,7 @@ import { experiences } from "../data/resume";
 import ScrollReveal from "./ScrollReveal";
 import { useLanguage } from "../context/LanguageContext";
 import { uiText } from "../data/i18n";
+import Image from "next/image";
 
 export default function Experience() {
   const { locale } = useLanguage();
@@ -74,11 +75,18 @@ export default function Experience() {
                     </div>
 
                     <div className=" py-2">
-                      <img
+                      {/* <img
+                       
+                        className=" h-16"
+                      /> */}
+                      <Image
                         src={`/logo/${exp.company}.png`}
                         alt={`${exp.company} Logo`}
-                        className=" h-16"
-                      />
+                        width={100}
+                        height={100}
+                        className="rounded-full object-cover"
+                        priority
+                      />{" "}
                     </div>
 
                     <p className="mb-4 text-sm leading-relaxed text-muted">
