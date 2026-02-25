@@ -253,7 +253,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "MiAi - Your Business AI Guru",
+    title: "MiAi - TSI WAY หรือวิถีชุมชนพัฒน์",
     description:
       "Unlock expert advice on sharing your knowledge and ideas about the 'TSI WAY หรือวิถีชุมชนพัฒน์.' To enhance management efficiency, reduce costs, achieve profits and sustainable growth.",
     technologies: [
@@ -716,6 +716,34 @@ export const projects = [
     // 🇹🇭 คำแปลภาษาไทย
     th: {
       description: "เว็บไซต์เกม Face Swap สำหรับเล่นในงานอีเวนต์",
+    },
+  },
+  {
+    id: 22,
+    title: "MI Group",
+    description:
+      "Unlock expert guidance in media planning and strategy, tailored for SMEs and startups with chatbot technology. ",
+    technologies: [
+      "Nuxt 3",
+      "OpenAI API",
+      "Tailwind CSS",
+      "MonggoDB",
+      "Node.js (Express)",
+      "Cloudflare",
+      "Vultr",
+      "Nginx",
+      "PM2",
+    ],
+    liveUrl: null,
+    githubUrl: null,
+    image: "/project/miai.png",
+    featured: false,
+    video_demo:
+      "https://drive.google.com/file/d/1s_q3cfpqyggMitJztyIUgAbhyG955hZE/view?usp=sharing",
+    // 🇹🇭 คำแปลภาษาไทย
+    th: {
+      description:
+        "ปลดล็อกคำแนะนำจากผู้เชี่ยวชาญในการวางแผนและกลยุทธ์สื่อที่เหมาะสำหรับ SMEs และ startups ด้วยเทคโนโลยีแชทบอท",
     },
   },
 ];
