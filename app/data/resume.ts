@@ -138,8 +138,8 @@ export const skills = {
     label: "Frontend",
     items: [
       { name: "React.js / Next.js", level: 65 },
-      { name: "Nuxt 3 / Vue 3", level: 80 },
-      { name: "TypeScript / JavaScript", level: 80 },
+      { name: "Nuxt 3 / Vue 3", level: 70 },
+      { name: "TypeScript / JavaScript", level: 70 },
       { name: "Tailwind CSS", level: 80 },
       { name: "HTML / CSS", level: 75 },
     ],
@@ -147,8 +147,8 @@ export const skills = {
   backend: {
     label: "Backend",
     items: [
-      { name: "Node.js / Express", level: 86 },
-      { name: "REST API Design", level: 84 },
+      { name: "Node.js / Express", level: 80 },
+      { name: "REST API Design", level: 80 },
     ],
   },
   database: {
@@ -169,6 +169,59 @@ export const skills = {
 };
 
 export const projects = [
+  {
+    id: 24,
+    title: "LineOA Chatbot",
+    description:
+      "LineOA Chatbot for answer question and provide information about product and service by connect with OpenAI API and other third-party APIs.",
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Firebase Hosting",
+      "Node.js (Express)",
+      "MongoDB",
+      "Cloudflare",
+      "Vultr",
+      "Nginx",
+      "Docker",
+    ],
+    liveUrl: "https://page.line.me/cds8743i?openQrModal=true",
+    githubUrl: null,
+    image: "/project/lineOA.png",
+    featured: true,
+    video_demo: null,
+    // 🇹🇭 คำแปลภาษาไทย
+    th: {
+      description:
+        " Chatbot LineOA สำหรับตอบคำถามและให้ข้อมูลเกี่ยวกับสินค้าและบริการโดยเชื่อมต่อกับ OpenAI API และ Third-party APIs อื่น ๆ",
+    },
+  },
+  {
+    id: 23,
+    title: "AI Image Generator",
+    description:
+      "Website for generating AI-powered images based on user input.",
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Firebase Hosting",
+      "Node.js (Express)",
+      "MongoDB",
+      "Cloudflare",
+      "Vultr",
+      "Nginx",
+      "Docker",
+    ],
+    liveUrl: "https://s2o.creaivelab.com/",
+    githubUrl: null,
+    image: "/project/s2o.png",
+    featured: true,
+    video_demo: null,
+    // 🇹🇭 คำแปลภาษาไทย
+    th: {
+      description: "เว็บไซต์สำหรับสร้างภาพด้วย AI ในวันสงกรานต์",
+    },
+  },
   {
     id: 8,
     title: "AR Try-On Lipstick",
@@ -543,7 +596,7 @@ export const projects = [
     },
   },
   {
-    id: 22,
+    id: 25,
     title: "WaiWai (for Holovue)",
     description:
       "Create 4 game for paly in the event by use face swap and acting game.",
@@ -561,7 +614,7 @@ export const projects = [
     liveUrl: "https://waiwaicreaive.web.app/",
     githubUrl: null,
     image: "/project/waiwai.png",
-    featured: true,
+    featured: false,
     video_demo: null,
     // 🇹🇭 คำแปลภาษาไทย
     th: {
