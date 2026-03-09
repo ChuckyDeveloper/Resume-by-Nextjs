@@ -68,12 +68,18 @@ export default function Hero() {
           {/* Name & title */}
           <h1 className="mb-4 text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             {firstName}
-            {lastName ? <span className="gradient-text"> {lastName}</span> : null}
+            {lastName ? (
+              <span className="gradient-text"> {lastName}</span>
+            ) : null}
           </h1>
 
           <h2 className="mb-6 text-xl font-medium text-accent sm:text-2xl">
             {text.title}
           </h2>
+
+          <p className="mb-8 max-w-2xl text-lg leading-relaxed text-muted">
+            Birthday: 02/03/1997
+          </p>
 
           <p className="mb-8 max-w-2xl text-lg leading-relaxed text-muted">
             {text.tagline}
