@@ -4,36 +4,19 @@ import {
   FolderGit2,
   ExternalLink,
   Github,
-  Code2,
-  Layers,
-  Bot,
-  BarChart3,
   ListVideo,
 } from "lucide-react";
+import Image from "next/image";
 import { projects } from "../data/resume";
 import ScrollReveal from "./ScrollReveal";
 import { useLanguage } from "../context/LanguageContext";
 import { uiText } from "../data/i18n";
-
-const projectIcons: Record<number, React.ReactNode> = {
-  1: <Layers size={22} />,
-  2: <Code2 size={22} />,
-  3: <Bot size={22} />,
-  4: <BarChart3 size={22} />,
-};
 
 const projectGradients: Record<number, string> = {
   1: "from-indigo-500/20 via-blue-500/20 to-cyan-500/20",
   2: "from-purple-500/20 via-fuchsia-500/20 to-pink-500/20",
   3: "from-emerald-500/20 via-teal-500/20 to-cyan-500/20",
   4: "from-orange-500/20 via-amber-500/20 to-yellow-500/20",
-};
-
-const projectGradientsFull: Record<number, string> = {
-  1: "from-indigo-500 to-cyan-500",
-  2: "from-purple-500 to-pink-500",
-  3: "from-emerald-500 to-teal-500",
-  4: "from-orange-500 to-amber-500",
 };
 
 export default function Projects() {
@@ -74,7 +57,13 @@ export default function Projects() {
                   <div
                     className={`relative h-40 w-full bg-gradient-to-br ${projectGradients[project.id] || "from-indigo-500/20 to-purple-500/20"} flex items-center justify-center overflow-hidden`}
                   >
-                    <img src={project.image} alt="Medium Logo" />
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} preview`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover"
+                    />
                   </div>
 
                   <div className="flex grow flex-col p-6">
@@ -134,7 +123,7 @@ export default function Projects() {
         {other.length > 0 && (
           <ScrollReveal delay={200}>
             <div className="mt-10">
-              <h3 className="mb-6 text-2xl font-semibold uppercase tracking-widest  text-gray-50">
+              <h3 className="mb-6 text-2xl font-semibold uppercase tracking-widest text-foreground">
                 {text.otherProjects}
               </h3>
               <div className="grid gap-4 sm:grid-cols-3">
@@ -150,7 +139,13 @@ export default function Projects() {
                         <div
                           className={`relative h-40 w-full bg-gradient-to-br ${projectGradients[project.id] || "from-indigo-500/20 to-purple-500/20"} flex items-center justify-center overflow-hidden`}
                         >
-                          <img src={project.image} alt="Medium Logo" />
+                          <Image
+                            src={project.image}
+                            alt={`${project.title} preview`}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 33vw"
+                            className="object-cover"
+                          />
                         </div>
 
                         <div className="flex grow flex-col p-6">

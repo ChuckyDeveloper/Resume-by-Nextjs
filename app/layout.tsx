@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Athit O. — Full Stack Developer",
+  title: "Athit Saenwaet — Full Stack Developer",
   description:
     "Full Stack Developer specialized in React, Next.js, Node.js, and cloud technologies. Building modern web experiences with passion and precision.",
   keywords: [
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "Web Developer",
     "Portfolio",
   ],
-  authors: [{ name: "Athit O." }],
+  authors: [{ name: "Athit Saenwaet" }],
   openGraph: {
-    title: "Athit O. — Full Stack Developer",
+    title: "Athit Saenwaet — Full Stack Developer",
     description:
       "Full Stack Developer specialized in React, Next.js, Node.js, and cloud technologies.",
     type: "website",

@@ -48,7 +48,7 @@ export default function Contact() {
                     {text.email}
                   </p>
                   <p className="text-sm font-semibold text-foreground">
-                    saenwaet60@gmail.com
+                    {personalInfo.email}
                   </p>
                 </div>
               </a>
@@ -62,7 +62,7 @@ export default function Contact() {
                     {text.phone}
                   </p>
                   <p className="text-sm font-semibold text-foreground">
-                    064-7244043
+                    {personalInfo.phone}
                   </p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function Contact() {
             {/* Social links */}
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href={"https://github.com/ChuckyDeveloper"}
+                href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-card flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5"
@@ -80,7 +80,7 @@ export default function Contact() {
                 GitHub
               </a>
               <a
-                href={"https://www.linkedin.com/in/athitsaenwaet/"}
+                href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-card flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5"
@@ -89,7 +89,7 @@ export default function Contact() {
                 LinkedIn
               </a>
               <a
-                href={"https://saenwaet58.medium.com/"}
+                href={personalInfo.medium}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-card group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground hover:-translate-y-0.5"

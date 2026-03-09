@@ -16,6 +16,8 @@ import { uiText } from "../data/i18n";
 export default function Hero() {
   const { locale } = useLanguage();
   const text = uiText[locale].hero;
+  const [firstName, ...lastNameParts] = personalInfo.name.split(" ");
+  const lastName = lastNameParts.join(" ");
 
   return (
     <section className="relative flex min-h-screen items-center justify-center px-6 overflow-hidden">
@@ -65,8 +67,8 @@ export default function Hero() {
 
           {/* Name & title */}
           <h1 className="mb-4 text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            Athit
-            <span className="gradient-text"> Saenwaet</span>
+            {firstName}
+            {lastName ? <span className="gradient-text"> {lastName}</span> : null}
           </h1>
 
           <h2 className="mb-6 text-xl font-medium text-accent sm:text-2xl">
@@ -85,11 +87,11 @@ export default function Hero() {
             </span>
             <span className="flex items-center gap-1.5">
               <Mail size={15} />
-              saenwaet60@gmail.com
+              {personalInfo.email}
             </span>
             <span className="flex items-center gap-1.5">
               <Phone size={15} />
-              064-7244043
+              {personalInfo.phone}
             </span>
           </div>
 
@@ -106,7 +108,7 @@ export default function Hero() {
               />
             </a>
             <a
-              href={"https://github.com/ChuckyDeveloper"}
+              href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground hover:-translate-y-0.5"
@@ -118,7 +120,7 @@ export default function Hero() {
               GitHub
             </a>
             <a
-              href={"https://www.linkedin.com/in/athitsaenwaet/"}
+              href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground hover:-translate-y-0.5"
@@ -130,7 +132,7 @@ export default function Hero() {
               LinkedIn
             </a>
             <a
-              href={"https://saenwaet58.medium.com/"}
+              href={personalInfo.medium}
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground hover:-translate-y-0.5"

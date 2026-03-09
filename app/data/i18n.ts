@@ -52,7 +52,7 @@ export const uiText = {
     },
     projects: {
       badge: "Projects",
-      heading: "Things I've built",
+      heading: "Projects that are still in use.",
       otherProjects: "Other completed projects",
       code: "Code",
       liveDemo: "Live Demo",
@@ -131,7 +131,7 @@ export const uiText = {
     },
     projects: {
       badge: "ผลงาน",
-      heading: "โปรเจกต์ที่ผมสร้าง",
+      heading: "โครงการที่ยังคงใช้งานอยู่",
       otherProjects: "โปรเจกต์อื่น ๆ ที่ทำเสร็จแล้ว",
       code: "โค้ด",
       liveDemo: "ลิงก์ใช้งาน",
