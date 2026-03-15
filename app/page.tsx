@@ -23,13 +23,21 @@ export default function Home() {
         <TechMarquee />
 
         <About />
+        {/* Gradient accent separator */}
+        <div className="mx-auto h-px max-w-xs bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <div className="section-alt">
           <Experience />
         </div>
+        {/* Gradient accent separator */}
+        <div className="mx-auto h-px max-w-xs bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <Skills />
+        {/* Gradient accent separator */}
+        <div className="mx-auto h-px max-w-xs bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <div className="section-alt">
           <Projects />
         </div>
+        {/* Gradient accent separator */}
+        <div className="mx-auto h-px max-w-xs bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <Education />
         <div className="relative overflow-hidden">
           {/* Contact gradient background */}

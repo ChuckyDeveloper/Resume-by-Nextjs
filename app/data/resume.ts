@@ -176,15 +176,14 @@ export const projects = [
     description:
       "LineOA Chatbot for answer question and provide information about product and service by connect with OpenAI API and other third-party APIs.",
     technologies: [
-      "Next.js",
+      "Nuxt.js",
       "Tailwind CSS",
-      "Firebase Hosting",
       "Node.js (Express)",
       "MongoDB",
       "Cloudflare",
       "Vultr",
       "Nginx",
-      "Docker",
+      "Line APIs",
     ],
     liveUrl: "https://page.line.me/cds8743i?openQrModal=true",
     githubUrl: null,
@@ -194,14 +193,14 @@ export const projects = [
     // 🇹🇭 คำแปลภาษาไทย
     th: {
       description:
-        " Chatbot LineOA สำหรับตอบคำถามและให้ข้อมูลเกี่ยวกับสินค้าและบริการโดยเชื่อมต่อกับ OpenAI API และ Third-party APIs อื่น ๆ",
+        "Chatbot LineOA สำหรับตอบคำถามและให้ข้อมูลเกี่ยวกับสินค้าและบริการโดยเชื่อมต่อกับ OpenAI API และ Third-party APIs อื่น ๆ",
     },
   },
   {
     id: 23,
     title: "AI Image Generator",
     description:
-      "Website for generating AI-powered images based on user input.",
+      "Website for generating AI-powered images based on user input. For S2O Songkran campaign 2024.",
     technologies: [
       "Next.js",
       "Tailwind CSS",
@@ -227,7 +226,7 @@ export const projects = [
     id: 8,
     title: "AR Try-On Lipstick",
     description:
-      "Website for trying on different lipstick shades using augmented reality technology.",
+      "Website for trying on different lipstick shades using AR technology.",
     technologies: [
       "Next.js",
       "Tailwind CSS",
@@ -246,8 +245,7 @@ export const projects = [
     video_demo: null,
     // 🇹🇭 คำแปลภาษาไทย
     th: {
-      description:
-        "เว็บไซต์สำหรับลองทาลิปสติกสีต่าง ๆ ด้วยเทคโนโลยี Augmented Reality",
+      description: "เว็บไซต์สำหรับลองทาลิปสติกสีต่าง ๆ ด้วยเทคโนโลยี AR",
     },
   },
   {
@@ -350,7 +348,7 @@ export const projects = [
     liveUrl: "https://designcolours.nipponpaintdecor.com/designcolours/th",
     githubUrl: null,
     image: "/project/designcolours.png",
-    featured: false,
+    featured: true,
     video_demo: null,
     // 🇹🇭 คำแปลภาษาไทย
     th: {
@@ -378,7 +376,7 @@ export const projects = [
     liveUrl: "https://designcolours.nipponpaintdecor.com/aidesigncolour/th",
     githubUrl: null,
     image: "/project/ai-colourdesign.png",
-    featured: false,
+    featured: true,
     video_demo: null,
     // 🇹🇭 คำแปลภาษาไทย
     th: {

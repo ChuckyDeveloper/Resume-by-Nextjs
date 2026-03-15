@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav
       className={`no-print fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-border bg-background/80 py-3 backdrop-blur-xl"
+          ? "border-b border-border/50 bg-background/70 py-3 backdrop-blur-2xl shadow-sm shadow-black/5"
           : "bg-transparent py-5"
       }`}
     >
@@ -42,7 +42,7 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-card hover:text-foreground"
+              className="nav-link rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-foreground"
             >
               {item.label}
             </a>

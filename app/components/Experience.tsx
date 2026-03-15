@@ -38,7 +38,7 @@ export default function Experience() {
                 <div className="group relative flex gap-6">
                   {/* Timeline dot & line */}
                   <div className="relative flex flex-col items-center">
-                    <div className="relative z-10 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 border-accent bg-background transition-all group-hover:scale-125 group-hover:bg-accent">
+                    <div className="relative z-10 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 border-accent bg-background transition-all group-hover:scale-125 group-hover:bg-accent group-hover:shadow-lg group-hover:shadow-accent/40">
                       <div className="h-1.5 w-1.5 rounded-full bg-accent group-hover:bg-white" />
                     </div>
                     {index < experiences.length - 1 && (

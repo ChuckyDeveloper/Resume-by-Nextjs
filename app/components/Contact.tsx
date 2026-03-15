@@ -40,7 +40,7 @@ export default function Contact() {
                 href={`mailto:${personalInfo.email}`}
                 className="glass-card group flex items-center gap-4 rounded-2xl p-6 transition-all hover:-translate-y-0.5"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors group-hover:bg-gradient-to-br group-hover:from-indigo-500 group-hover:to-purple-500 group-hover:text-white">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-indigo-500 group-hover:to-purple-500 group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-indigo-500/20">
                   <Mail size={22} />
                 </div>
                 <div>

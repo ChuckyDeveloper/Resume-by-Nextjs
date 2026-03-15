@@ -55,8 +55,9 @@ export const uiText = {
       heading: "Projects that are still in use.",
       otherProjects: "Other completed projects",
       code: "Code",
-      liveDemo: "Live Demo",
+      liveDemo: "View portfolio",
       videoDemo: "Video Demo",
+      tryUsingIt: "Try using it",
     },
     education: {
       badge: "Education",
@@ -134,8 +135,9 @@ export const uiText = {
       heading: "โครงการที่ยังคงใช้งานอยู่",
       otherProjects: "โปรเจกต์อื่น ๆ ที่ทำเสร็จแล้ว",
       code: "โค้ด",
-      liveDemo: "ลิงก์ใช้งาน",
+      liveDemo: "ดูผลงาน",
       videoDemo: "วิดีโอเดโม",
+      tryUsingIt: "ลองใช้งาน",
     },
     education: {
       badge: "การศึกษา",

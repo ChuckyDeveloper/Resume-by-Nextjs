@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import {
   MapPin,
   Mail,
@@ -7,6 +8,7 @@ import {
   Linkedin,
   ChevronDown,
   Phone,
+  Sparkles,
 } from "lucide-react";
 import { personalInfo } from "../data/resume";
 import Image from "next/image";
@@ -18,6 +20,38 @@ export default function Hero() {
   const text = uiText[locale].hero;
   const [firstName, ...lastNameParts] = personalInfo.name.split(" ");
   const lastName = lastNameParts.join(" ");
+
+  /* Typewriter effect — cycle through roles */
+  const roles = [
+    "Full Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+  ];
+  const [roleIdx, setRoleIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+  const [typed, setTyped] = useState("");
+
+  useEffect(() => {
+    const role = roles[roleIdx];
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (!deleting && charIdx <= role.length) {
+      setTyped(role.slice(0, charIdx));
+      timer = setTimeout(() => setCharIdx((c) => c + 1), 80);
+    } else if (!deleting && charIdx > role.length) {
+      timer = setTimeout(() => setDeleting(true), 2200);
+    } else if (deleting && charIdx > 0) {
+      setTyped(role.slice(0, charIdx - 1));
+      timer = setTimeout(() => setCharIdx((c) => c - 1), 40);
+    } else {
+      setDeleting(false);
+      setRoleIdx((i) => (i + 1) % roles.length);
+    }
+
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [charIdx, deleting, roleIdx]);
 
   return (
     <section className="relative flex min-h-screen items-center justify-center px-6 overflow-hidden">
@@ -57,7 +91,7 @@ export default function Hero() {
           style={{ animationDelay: "0.2s" }}
         >
           {/* Status badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm backdrop-blur-sm">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
@@ -73,8 +107,9 @@ export default function Hero() {
             ) : null}
           </h1>
 
-          <h2 className="mb-6 text-xl font-medium text-accent sm:text-2xl">
-            {text.title}
+          <h2 className="mb-6 h-8 text-xl font-medium sm:h-9 sm:text-2xl">
+            <span className="gradient-text">{typed}</span>
+            <span className="typewriter-cursor" />
           </h2>
 
           <p className="mb-8 max-w-2xl text-lg leading-relaxed text-muted">
@@ -107,6 +142,10 @@ export default function Hero() {
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25"
             >
+              <Sparkles
+                size={14}
+                className="transition-transform group-hover:scale-125"
+              />
               {text.getInTouch}
               <Mail
                 size={16}

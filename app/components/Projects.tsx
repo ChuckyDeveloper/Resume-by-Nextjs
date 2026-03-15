@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  FolderGit2,
-  ExternalLink,
-  Github,
-  ListVideo,
-} from "lucide-react";
+import { FolderGit2, ExternalLink, Github, ListVideo } from "lucide-react";
 import Image from "next/image";
 import { projects } from "../data/resume";
 import ScrollReveal from "./ScrollReveal";
@@ -55,15 +50,16 @@ export default function Projects() {
 
                   {/* Gradient image placeholder */}
                   <div
-                    className={`relative h-40 w-full bg-gradient-to-br ${projectGradients[project.id] || "from-indigo-500/20 to-purple-500/20"} flex items-center justify-center overflow-hidden`}
+                    className={`relative h-44 w-full bg-gradient-to-br ${projectGradients[project.id] || "from-indigo-500/20 to-purple-500/20"} flex items-center justify-center overflow-hidden`}
                   >
                     <Image
                       src={project.image}
                       alt={`${project.title} preview`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover"
+                      className="object-cover img-zoom"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   </div>
 
                   <div className="flex grow flex-col p-6">
@@ -108,7 +104,7 @@ export default function Projects() {
                           className="flex items-center gap-1.5 text-xs font-medium text-muted transition-colors hover:text-accent"
                         >
                           <ExternalLink size={14} />
-                          {text.liveDemo}
+                          {text.tryUsingIt}
                         </a>
                       )}
                     </div>
@@ -144,8 +140,9 @@ export default function Projects() {
                             alt={`${project.title} preview`}
                             fill
                             sizes="(max-width: 640px) 100vw, 33vw"
-                            className="object-cover"
+                            className="object-cover img-zoom"
                           />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                         </div>
 
                         <div className="flex grow flex-col p-6">

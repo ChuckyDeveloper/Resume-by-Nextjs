@@ -35,7 +35,9 @@ export default function Education() {
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-muted">
                 {text.sectionTitle}
               </h3>
-              <div className="glass-card rounded-2xl p-6">
+              <div className="glass-card relative rounded-2xl p-6 overflow-hidden">
+                {/* Gradient accent */}
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
                 <div className="mb-2 flex items-start justify-between gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 text-accent">
                     <Image
